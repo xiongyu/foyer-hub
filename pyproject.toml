@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "indoor-terminal"
+version = "0.1.0"
+description = "Site-independent indoor terminal plugin host and PC dashboard"
+readme = "README.md"
+requires-python = ">=3.9"
+
+[project.scripts]
+indoor-terminal = "indoor_terminal.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+indoor_terminal = ["static/*.html", "static/*.js", "static/*.css"]

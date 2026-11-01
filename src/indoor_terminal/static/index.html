@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173a3a">
+  <title>软室内机</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <main class="shell">
+    <header class="masthead reveal">
+      <div>
+        <p class="eyebrow">INDOOR / LOCAL CONSOLE</p>
+        <h1>软室内机</h1>
+        <p id="site-name" class="subtitle">正在读取设备状态</p>
+      </div>
+      <div id="mode-badge" class="mode-badge">CONNECTING</div>
+    </header>
+
+    <section class="safety reveal delay-1">
+      <span class="safety-mark">!</span>
+      <div>
+        <strong>实机互斥要求</strong>
+        <p id="connection-note">正在读取接入方式…</p>
+      </div>
+    </section>
+
+    <section class="status-grid reveal delay-2" aria-label="运行状态">
+      <article class="metric"><span>当前能力</span><strong id="feature-count">--</strong><small id="feature-detail">--</small></article>
+      <article class="metric"><span>出门呼梯</span><strong id="elevator-count">--</strong><small id="elevator-detail">--</small></article>
+    </section>
+
+    <section class="workspace reveal delay-3">
+      <article class="panel actions-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">OPERATIONS</p>
+            <h2>协议动作</h2>
+          </div>
+          <button id="refresh" class="icon-button" title="刷新">↻</button>
+        </div>
+        <div class="action-row">
+          <button id="register" class="action-button">
+            <span>01</span>
+            <strong>注册室内机</strong>
+            <small>向已启用的服务请求注册</small>
+          </button>
+          <button id="discover" class="action-button">
+            <span>02</span>
+            <strong>发现中心</strong>
+            <small>查找当前站点服务</small>
+          </button>
+          <button id="rest-sync" class="action-button">
+            <span>03</span>
+            <strong>同步站点信息</strong>
+            <small>读取已启用的数据源</small>
+          </button>
+        </div>
+        <div id="operation-result" class="operation-result" role="status">等待操作</div>
+      </article>
+
+      <article class="panel elevator-panel">
+        <p class="eyebrow">ELEVATOR / GUARDED</p>
+        <h2>呼叫电梯</h2>
+        <p>此操作需要启用呼梯能力并输入确认口令。受理结果与实际到梯分别记录。</p>
+        <label for="elevator-confirm">输入确认口令</label>
+        <div class="confirm-row">
+          <input id="elevator-confirm" autocomplete="off" spellcheck="false" placeholder="CALL_ELEVATOR">
+          <button id="call-elevator" class="danger-button" disabled>呼叫</button>
+        </div>
+        <small id="cooldown">口令匹配后按钮可用</small>
+      </article>
+    </section>
+
+    <section class="panel event-panel reveal delay-4">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">TRACE</p>
+          <h2>实时事件</h2>
+        </div>
+        <div class="token-box">
+          <label for="api-token">API Token</label>
+          <input id="api-token" type="password" placeholder="未设置则留空">
+        </div>
+      </div>
+      <div id="events" class="events" aria-live="polite"></div>
+    </section>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+runtime/
+evidence*/
+*.local.json
+.env
+*.pem
+*.key
+*.pcap*
+*.apk
+*.mp4
+*.mkv

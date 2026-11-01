@@ -1,0 +1,7 @@
+{
+  "site_name": "室内机演练",
+  "plugins": ["demo"],
+  "settings": {},
+  "web": {"host": "127.0.0.1", "port": 8080},
+  "elevator": {"enabled": false, "confirm_phrase": "CALL_ELEVATOR", "cooldown_seconds": 30}
+}
